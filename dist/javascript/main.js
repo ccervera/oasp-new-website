@@ -1,36 +1,45 @@
 $(document).ready(function () {
-    loadInsertions();
-    hideAndShowNetworkElements();
+    loadInsertions($("body"));
 });
 
-
-function loadInsertions() {
-    console.log("loadInsertions");
-    $("insertHtml").each(function (i) {
+function loadInsertions(view) {
+    view.find("insertHtml").each(function (i) {
         let url = $(this).attr("url");
-        $(this).load(url.concat("/component.html"), function() {
-            loadMarkdownInsertions();
+        $(this).addClass("d-none");
+        $(this).load(url.concat("/component.html"), function () {
+            loadInsertions($(this));
+            loadMarkdownInsertions($(this));
+            loadAsciidocInsertions($(this));
+            hideAndShowNetworkElements($(this));
+            initTooltips($(this));
         });
         $("<link/>", {
             rel: "stylesheet",
             type: "text/css",
             href: url.concat("/component.css")
         }).appendTo("head");
-
-        console.log("Appending in loadInsertions");
     });
 }
 
-function loadMarkdownInsertions() {
+function loadMarkdownInsertions(view) {
     var md = window.mdit;
-    $("insertMd").each(function (i) {
+    view.find("insertMd").each(function (i) {
         fetch($(this).attr("src"))
-        .then(response => response.text())
-        .then(text => $(this).empty().append(md.render(text)))
+            .then(response => response.text())
+            .then(text => $(this).empty().append(md.render(text)))
     });
 }
 
-function hideAndShowNetworkElements() {
+function loadAsciidocInsertions(view) {
+    var ad = window.ad;
+    view.find("insertAd").each(function (i) {
+        fetch($(this).attr("src"))
+            .then(response => response.text())
+            .then(text => $(this).empty().append(ad.convert(text)))
+    });
+}
+
+function hideAndShowNetworkElements(view) {
     $.ajax({
         url: 'https://troom.capgemini.com/sites/vcc/devon/overview.aspx',
         dataType: 'jsonp',
@@ -38,12 +47,20 @@ function hideAndShowNetworkElements() {
         timeout: 2000,
         error: function (hrx, textStatus, error) {
             if (textStatus === 'parsererror') {
-                $('.only-internal').show();
-                $('.only-external').hide();
+                $('.only-internal').show(removeInvisibility(view));
+                $('.only-external').hide(removeInvisibility(view));
             } else {
-                $('.only-internal').hide();
-                $('.only-external').show();
+                $('.only-internal').hide(removeInvisibility(view));
+                $('.only-external').show(removeInvisibility(view));
             }
         }
     });
+}
+
+function removeInvisibility(view) {
+    view.removeClass("d-none");
+}
+
+function initTooltips(view) {
+    view.find('[data-toggle="tooltip"]').tooltip();
 }

@@ -6,3 +6,6 @@ import './scss/app.scss';
 
 var md = require('markdown-it')();
 window.mdit = md;
+
+var ad = require('asciidoctor.js')();
+window.ad = ad;

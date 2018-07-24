@@ -78,3 +78,12 @@ Example:
 <insertMd src="/assets/markdown/helloworld.md"></insertMd>
 ```
 3. The `loadMarkdownInsertions()` function at `main.js` will deal with the conversion from Markdown to HTML and inject the content.
+
+### Implementing Asciidoc files
+1. Place the Asciidoc file in `/dist/assets/asciidoc`
+2. Use the `insertAd` HTML tag and specify the Asciidoc file with the `src` parameter.
+Example:
+```
+<insertAd src="/assets/asciidoc/helloworld.asciidoc"></insertAd>
+```
+3. The `loadAsciidocInsertions()` function at `main.js` will deal with the conversion from Asciidoc to HTML and inject the resulting HTML formatted content

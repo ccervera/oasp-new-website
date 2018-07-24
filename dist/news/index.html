@@ -13,10 +13,38 @@
 </head>
 
 <body>
-    <insertHtml url="/html/nav-menu" class="fixed-top"></insertHtml>
-    <div class="DEVON DEVON-CONTAINER bg-light">
-        <insertHtml url="/news/sections/devonfw-goes-open-source"></insertHtml>
+    <!-- NAVIGATION-->
+    <div class="fixed-top" style="pointer-events: none">
+        <!-- NAV BAR -->
+        <insertHtml url="/html/nav-menu" style="pointer-events: auto"></insertHtml>
+        <!-- SIDE BAR -->
+        <div class="row container-fluid DEVON m-0 px-0 " style="pointer-events: none">
+            <div class="col-12 col-md-3 m-0 p-0">
+                <insertHtml url="/news/sections/sidenav" style="pointer-events: auto"></insertHtml>
+            </div>
+        </div>
     </div>
+
+    <!-- CONTENT -->
+    <div class="container-fluid DEVON DEVON-CONTAINER m-0 px-0">
+        <div class="d-block d-md-none">
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="row m-0 p-0">
+            <!-- GHOST COLUMN-->
+            <div class="col-0 col-md-3 m-0 p-0">
+
+            </div>
+            <!-- CONTENT -->
+            <div class="col-12 col-md-9 m-0 p-0">
+                <insertHtml url="/news/sections/devonfw-goes-open-source"></insertHtml>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
     <insertHtml url="/html/footer"></insertHtml>
 </body>
 
