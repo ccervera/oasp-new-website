@@ -12,6 +12,7 @@ function loadInsertions(view) {
             loadAsciidocInsertions($(this));
             hideAndShowNetworkElements($(this));
             initTooltips($(this));
+            initCarousels($(this));
         });
         $("<link/>", {
             rel: "stylesheet",
@@ -63,4 +64,8 @@ function removeInvisibility(view) {
 
 function initTooltips(view) {
     view.find('[data-toggle="tooltip"]').tooltip();
+}
+
+function initCarousels(view) {
+    view.find('.carousel').carousel();
 }

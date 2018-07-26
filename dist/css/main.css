@@ -116,7 +116,9 @@ div {
 /* FOOTER */
 
 .footer {
-  background: url('../../assets/images/capgemini.png') center no-repeat;
+  position: relative;
+  bottom: -100%;
+  background: url('/assets/images/capgemini.png') center no-repeat;
   font-family: Montserrat-Regular;
   background-position-y: 250px;
   background-size: cover;
@@ -212,7 +214,7 @@ div {
   content: '';
   display: inline-block;
   position: relative;
-  width: 30%;
+  width: 20%;
   margin-right: 1em;
   background-color: transparent;
   height: 1px;
@@ -224,7 +226,7 @@ div {
   content: '';
   display: inline-block;
   position: relative;
-  width: 30%;
+  width: 20%;
   margin-left: 1em;
   background-color: var(--main-theme-color);
   height: 1px;
@@ -441,4 +443,12 @@ div {
 @font-face {
   font-family: montserrat-Extralight;
   src: url('/assets/fonts/Montserrat-ExtraLight.ttf');
+}
+
+.anchorSection::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 75px; 
+  visibility: hidden; 
 }
