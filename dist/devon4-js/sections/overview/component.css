@@ -7,7 +7,8 @@
 
 #overview-applic-ref p,
 #overview-applic-template p,
-#overview-sample-application p {
+#overview-sample-application p,
+#overview-documentation p {
 	color: #585657;
 	font-size: 12pt;
 	line-height: 18pt;
@@ -16,7 +17,8 @@
 
 #overview-applic-ref .btn,
 #overview-applic-template .btn,
-#overview-sample-application .btn {
+#overview-sample-application .btn,
+#overview-documentation {
 	font-size: 12pt !important;
 }
 
