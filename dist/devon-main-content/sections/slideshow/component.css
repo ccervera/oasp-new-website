@@ -12,6 +12,6 @@
 .carousel-caption {
 	margin-bottom: 5%;
 	color: #4BBDEC;
-	background: rgba(100, 100, 100, .6);
+	/* background: rgba(100, 100, 100, .6); */
 	font-family: 'MavenPro-Bold', sans-serif;
 }
