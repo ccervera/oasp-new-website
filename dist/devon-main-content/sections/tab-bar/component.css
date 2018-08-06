@@ -13,3 +13,11 @@
     border-bottom: 100em solid #4bbdec;
     color: white;
 }
+
+.DEVONgallerydiv {
+    text-align: center !important;
+}
+
+.DEVONgallerydiv h3{
+    font-size: 12pt;
+}
