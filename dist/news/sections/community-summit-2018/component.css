@@ -1,0 +1,9 @@
+#community-summit-2018-wrapper {
+	background-color: #6348BF;
+	color: white;
+}
+
+.wave-blue {
+    background-image: url(/assets/images/wave.svg);
+    background-size: cover;
+}
