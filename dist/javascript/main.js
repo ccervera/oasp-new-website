@@ -79,8 +79,6 @@ function tabScroll(dir) {
             activeTab = i;
         }
     }
-
-    console.log("Active Tab: " + activeTab);
     switch(dir) {
         case 'left':
         if(activeTab > 0) {
