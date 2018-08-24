@@ -42,7 +42,7 @@ function loadAsciidocInsertions(view) {
 */
 function hideAndShowNetworkElements(view) {
     $.ajax({
-        url: 'http://de-mucevolve02/',
+        url: 'https://e-3d.capgemini.com/',
         dataType: 'jsonp',
         method: 'GET',
         timeout: 3000,
