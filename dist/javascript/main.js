@@ -42,7 +42,7 @@ function loadAsciidocInsertions(view) {
 */
 function hideAndShowNetworkElements(view) {
     $.ajax({
-        url: 'https://e-3d.capgemini.com/',
+        url: 'https://troom.capgemini.com/sites/vcc/devon/overview.aspx',
         dataType: 'jsonp',
         method: 'GET',
         timeout: 3000,
