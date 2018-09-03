@@ -1,9 +1,25 @@
+#gettingStarted {
+	counter-reset: getting-started-counter;
+}
+
 .gettingStarted .get-started-title {
 	font-size: 14pt;
+}	
+
+.gettingStarted .get-started-title::before {
+	counter-increment: getting-started-counter;
+	content: counter(getting-started-counter) ". ";
+	color: #4bbdec;
+	font-weight: bold;
+}
+
+.gettingStarted .get-started-body {
+	font-size: 12pt;
 }
 
 @media (min-width: 768px) {
 	.gettingStarted {
-		margin: 0 25%;
+		max-width: 800px;
+		margin: 0 auto;
 	}
 }
